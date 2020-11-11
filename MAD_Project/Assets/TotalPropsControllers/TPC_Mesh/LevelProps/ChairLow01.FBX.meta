@@ -1,0 +1,138 @@
+fileFormatVersion: 2
+guid: 611f30124d87621418d875a1e10ed5da
+timeCreated: 1481465348
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: ChairSuppBase_low
+    100004: ChairSuppBaseStnd_Copy
+    100006: ChairSuppBaseStnd_low
+    100008: WheelBaseClndTbe_low
+    100010: WheelCh_low
+    100012: WheelCh_low001
+    100014: WheelCh_low002
+    100016: WheelCh_low003
+    100018: WheelChbaseSqr_low
+    100020: WheelChHanger_low
+    100022: WheelChHanger_low001
+    100024: WheelChHanger_low002
+    100026: WheelChHanger_low003
+    400000: //RootNode
+    400002: ChairSuppBase_low
+    400004: ChairSuppBaseStnd_Copy
+    400006: ChairSuppBaseStnd_low
+    400008: WheelBaseClndTbe_low
+    400010: WheelCh_low
+    400012: WheelCh_low001
+    400014: WheelCh_low002
+    400016: WheelCh_low003
+    400018: WheelChbaseSqr_low
+    400020: WheelChHanger_low
+    400022: WheelChHanger_low001
+    400024: WheelChHanger_low002
+    400026: WheelChHanger_low003
+    2300000: ChairSuppBase_low
+    2300002: ChairSuppBaseStnd_Copy
+    2300004: ChairSuppBaseStnd_low
+    2300006: WheelBaseClndTbe_low
+    2300008: WheelCh_low
+    2300010: WheelCh_low001
+    2300012: WheelCh_low002
+    2300014: WheelCh_low003
+    2300016: WheelChbaseSqr_low
+    2300018: WheelChHanger_low
+    2300020: WheelChHanger_low001
+    2300022: WheelChHanger_low002
+    2300024: WheelChHanger_low003
+    3300000: ChairSuppBase_low
+    3300002: ChairSuppBaseStnd_Copy
+    3300004: ChairSuppBaseStnd_low
+    3300006: WheelBaseClndTbe_low
+    3300008: WheelCh_low
+    3300010: WheelCh_low001
+    3300012: WheelCh_low002
+    3300014: WheelCh_low003
+    3300016: WheelChbaseSqr_low
+    3300018: WheelChHanger_low
+    3300020: WheelChHanger_low001
+    3300022: WheelChHanger_low002
+    3300024: WheelChHanger_low003
+    4300000: WheelCh_low
+    4300002: ChairSuppBase_low
+    4300004: ChairSuppBaseStnd_low
+    4300006: WheelBaseClndTbe_low
+    4300008: WheelChbaseSqr_low
+    4300010: WheelChHanger_low
+    4300012: ChairSuppBaseStnd_Copy
+    4300014: WheelChHanger_low001
+    4300016: WheelCh_low001
+    4300018: WheelChHanger_low002
+    4300020: WheelCh_low002
+    4300022: WheelChHanger_low003
+    4300024: WheelCh_low003
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
