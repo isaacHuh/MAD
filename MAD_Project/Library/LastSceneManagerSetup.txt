@@ -1,9 +1,5 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Christiana/Scenes/TitleScreen.unity
-=======
 - path: Assets/Scenes/FranciscoScene.unity
->>>>>>> be0506d824d99c40765e322121b4bc1d6c6aabf0
   isLoaded: 1
   isActive: 1
   isSubScene: 0
