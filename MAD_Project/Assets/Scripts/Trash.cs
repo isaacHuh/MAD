@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class Trash : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject TaskManager;
+    private bool startTask = false;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void InvokeTask(string TaskName){
+        if(TaskName == "Trash")
+            startTask = true;
+        Debug.Log("Trash now has a task to watch out for");
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.name == "TempCube"){
-            Debug.Log("Task Completed");
-            Destroy(other.gameObject);
+        if (startTask == true){
+            if (other.name == "TrashItem"){
+                Debug.Log("Task Completed");
+                startTask = false;
+                TaskManager.SendMessage("FinishedTask", "Trash");
+            }
         }
     }
 }

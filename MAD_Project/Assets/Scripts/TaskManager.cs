@@ -4,31 +4,37 @@ using UnityEngine;
 
 public class TaskManager : MonoBehaviour
 {
+    public List<GameObject> AllObjectsWithTasks = new List<GameObject>();//All objects that are associated with tasks
     private List<string> AllTasks = new List<string>();//All tasks that are currently possible
     private List<string> CurrentTasks = new List<string>();//All tasks that is currently assigned to the player
-    private int assigned_tasks = 1;
+    private int assigned_tasks = 0;
+
+    private void Start(){
+        AllTasks.Add("Trash");
+        assigned_tasks = 1;
+    }
 
     private void Update(){
         if (Input.GetKeyDown(KeyCode.KeypadEnter)){//Checks to see if the player is ready
             if (CurrentTasks.Count == 0){//Checks to see if the player has tasks to do
                 AssignTasks(); //Assigns a task to the player
+                Debug.Log("Task has been assigned");
             }
         }
     }
 
     private void AssignTasks(){
-        int rng;
-        List<int> exclude = new List<int>();
+        int rngTask;
 
-        for(int i = 0; i < assigned_tasks; i++){
-            rng = (int)(Random.Range(1.0f, 3.0f));
-            if (!(exclude.Contains(rng))){
-                CurrentTasks.Add(AllTasks[rng]);
-                //GameObject.Find(CurrentTasks[AllTasks[rng]]).GetComponent<Name of Component>().ActivateTask();  
-                exclude.Add(rng);
+        for (int i = 0; i < assigned_tasks; i++){
+            rngTask = (int)(Random.Range(0.0f, (AllTasks.Count - 1)));
+            CurrentTasks.Add(AllTasks[rngTask]);
+        }
+
+        for (int i = 0; i < CurrentTasks.Count; i++){
+            for (int j = 0; j < AllObjectsWithTasks.Count; j++){
+                AllObjectsWithTasks[j].SendMessage("InvokeTask", CurrentTasks[i]);
             }
-            else
-                assigned_tasks--;
         }
     }
 
