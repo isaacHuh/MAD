@@ -7,28 +7,42 @@ public class TaskManager : MonoBehaviour
     public List<GameObject> AllObjectsWithTasks = new List<GameObject>();//All objects that are associated with tasks
     private List<string> AllTasks = new List<string>();//All tasks that are currently possible
     private List<string> CurrentTasks = new List<string>();//All tasks that is currently assigned to the player
-    private int assigned_tasks = 0;
+    private int assigned_tasks = 1;
 
     private void Start(){
         AllTasks.Add("Trash");
-        assigned_tasks = 1;
+        for(int i = 0; i < AllObjectsWithTasks.Count; i++){
+            AllObjectsWithTasks[i].SendMessage("InvokeTaskAtBeginning");
+        }
+
+        for (int i = 0; i < AllTasks.Count; i++){
+            CurrentTasks.Add(AllTasks[i]);
+        }
     }
 
     private void Update(){
-        if (Input.GetKeyDown(KeyCode.KeypadEnter)){//Checks to see if the player is ready
+        /*
+        if (Input.GetKeyDown(KeyCode.Return)){//Checks to see if the player is ready
             if (CurrentTasks.Count == 0){//Checks to see if the player has tasks to do
                 AssignTasks(); //Assigns a task to the player
                 Debug.Log("Task has been assigned");
             }
         }
+        */
     }
 
     private void AssignTasks(){
         int rngTask;
+        List<int> numbers = new List<int>();
+
+        for(int i = 0; i < AllTasks.Count; i++){
+            numbers[i] = i;
+        }
 
         for (int i = 0; i < assigned_tasks; i++){
-            rngTask = (int)(Random.Range(0.0f, (AllTasks.Count - 1)));
-            CurrentTasks.Add(AllTasks[rngTask]);
+            rngTask = (int)(Random.Range(0.0f, (numbers.Count - 1)));
+            CurrentTasks.Add(AllTasks[numbers[rngTask]]);
+            numbers.RemoveAt(rngTask);
         }
 
         for (int i = 0; i < CurrentTasks.Count; i++){
