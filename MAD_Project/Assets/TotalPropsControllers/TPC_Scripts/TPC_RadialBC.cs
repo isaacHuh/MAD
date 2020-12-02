@@ -16,6 +16,7 @@ public class TPC_RadialBC : MonoBehaviour {
     public float MovingTime=3;
     private float CurrenTime;
     private float CurrenOffTime;
+    public bool turning = false;
 
 
     // Use this for initialization
@@ -29,7 +30,10 @@ public class TPC_RadialBC : MonoBehaviour {
         switch (RadialBCMod)
         {
             case RadialBC_Mode.manual:
-                Debug.Log("Switch-doingManual");//TODO
+                //Debug.Log("Switch-doingManual");//TODO
+                if(turning){
+                    DoManualMode();
+                }
                 break;
 
             case RadialBC_Mode.automatic:
@@ -70,7 +74,40 @@ public class TPC_RadialBC : MonoBehaviour {
                 doOpositeDirection();
                 CurrenTime = 0;
                 CurrenOffTime = 0;
+                OffTime = 1;//Random.Range(1, OffTime + 2);
+            }
+        }
+
+    }
+
+    void DoManualMode()
+    {
+        CurrenTime += Time.deltaTime;
+
+        if (CurrenTime < MovingTime)
+        {
+            if (RadialBCDirection == RadialBC_Direction.Right)
+            {
+                RadialBCObject.transform.Rotate(new Vector3(0, 0, Time.deltaTime * MovSpeed));
+            }
+
+            if (RadialBCDirection == RadialBC_Direction.Left)
+            {
+                RadialBCObject.transform.Rotate(new Vector3(0, 0, Time.deltaTime * -MovSpeed));
+            }
+        }
+
+        if (CurrenTime > MovingTime)
+        {
+            CurrenOffTime += Time.deltaTime;
+
+            if (CurrenOffTime > OffTime)
+            {
+                doOpositeDirection();
+                CurrenTime = 0;
+                CurrenOffTime = 0;
                 OffTime = Random.Range(1, OffTime + 2);
+                turning = false;
             }
         }
 
