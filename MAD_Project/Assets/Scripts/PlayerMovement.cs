@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
-
+    public Camera cam;
     public float speed = 12f;
     public float gravity = -9.81f;
 
@@ -25,6 +25,23 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Ray ray = cam.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit)){
+            if(Input.GetMouseButtonDown(0)){
+                if(hit.transform.tag == "Radial"){
+                    hit.transform.GetComponent<TPC_RadialBC>().turning = true;
+                }
+                if(hit.transform.tag == "Switch"){
+                    hit.transform.GetComponent<TPC_SwitchBton>().turning = true;
+                }
+            }
+        
+            //print("I'm looking at " + hit.transform.name);
+        }else{
+            //print("I'm looking at nothing!");
+        }
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0) {

@@ -11,7 +11,7 @@ public class TPC_SwitchBton : MonoBehaviour {
     public Switch_Mode SwitchM= Switch_Mode.automatic;
     public GameObject SwitchInterct;   
     public Switch_Pos ClickPosition;
-
+    public bool turning = false;
     public float OffTime=4;
     private float CurrenTime;
 
@@ -19,7 +19,11 @@ public class TPC_SwitchBton : MonoBehaviour {
     void Start () {
       
        //Start trigger with a ramdon initial postition.
-       doRandomInitPos();
+       //doRandomInitPos();
+
+        //Start trigger facing down
+        SwitchInterct.transform.Rotate(SwitchInterct.transform.rotation.x - 45, 0, 0);
+        ClickPosition = Switch_Pos.Down;
     }
 	
 	// Update is called once per frame
@@ -28,7 +32,10 @@ public class TPC_SwitchBton : MonoBehaviour {
         switch (SwitchM)
         {
             case Switch_Mode.manual:
-                Debug.Log("Switch-doingManual");//TODO
+                //Debug.Log("Switch-doingManual");//TODO
+                if(turning){
+                    DoManualMode();
+                }
                 break;
             case Switch_Mode.automatic:
                 DoAutomaticMode();
@@ -49,6 +56,16 @@ public class TPC_SwitchBton : MonoBehaviour {
             CurrenTime = 0;
            //OffTime = Random.Range(1, OffTime + 2);            //Uncoment this line if you whant to randomize the offtime.
         }
+    }
+
+    void DoManualMode()
+    {
+
+        doAutomaticSwitch();
+        CurrenTime = 0;
+        turning = false;
+        //OffTime = Random.Range(1, OffTime + 2);            //Uncoment this line if you whant to randomize the offtime.
+
     }
 
     void doRandomInitPos()
