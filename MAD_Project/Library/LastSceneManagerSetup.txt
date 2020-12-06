@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Christiana/Scenes/SampleScene 1.unity
+=======
+- path: Assets/Scenes/IsaacScene.unity
+>>>>>>> 19d7801b0ede31add03e94d741637ad5d0988dd2
   isLoaded: 1
   isActive: 1
   isSubScene: 0
