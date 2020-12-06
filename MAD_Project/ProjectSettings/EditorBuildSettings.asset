@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Christiana/Scenes/TitleScreen.unity
     guid: dd8735df475e21145a957f2e798f8e4b
+  - enabled: 1
+    path: Assets/Christiana/Scenes/DeathScreen.unity
+    guid: 445aed39a314d2c4e8b6907df16a0c27
   m_configObjects: {}

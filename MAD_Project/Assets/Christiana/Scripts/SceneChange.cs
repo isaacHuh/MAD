@@ -21,4 +21,9 @@ public class SceneChange : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene 1");
     }
 
+    public void MenuClick()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("TitleScreen");
+    }
+
 }
