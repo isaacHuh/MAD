@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 23000010688044446}
   - component: {fileID: 65000013439526506}
   - component: {fileID: 114000010085945064}
+  - component: {fileID: 2549485199493238720}
   m_Layer: 0
   m_Name: BtonRd13_low
-  m_TagString: Untagged
+  m_TagString: Radial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000010587379006}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: -0, y: 0, z: -0.00096309674}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -180, y: 0, z: 0}
 --- !u!33 &33000011408261328
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -106,9 +107,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d6462ec41526a4b943912b4b3fd340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RadialBCMod: 2
+  RadialBCMod: 1
   RadialBCDirection: 1
   RadialBCObject: {fileID: 1000010587379006}
   MovSpeed: 50
   OffTime: 1
   MovingTime: 3
+  turning: 0
+--- !u!114 &2549485199493238720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010587379006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb5465a0b88d6e48960cbc4763325e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskObj: {fileID: 1000010587379006}
+  highlightMat: {fileID: 2100000, guid: 5dcecd44e0b043f48a644626572b756a, type: 2}
+  finished: 0

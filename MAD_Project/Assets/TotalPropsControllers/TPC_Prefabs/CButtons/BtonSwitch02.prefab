@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 33000014292773656}
   - component: {fileID: 23000010318170918}
   - component: {fileID: 65000014029047350}
+  - component: {fileID: 8296888089422810194}
+  - component: {fileID: 7097902797073597954}
   m_Layer: 0
   m_Name: BtonSwitchSmBody02_low
-  m_TagString: Untagged
+  m_TagString: Switch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,6 +95,38 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0062573776, y: 0.005416557, z: 0.017735505}
   m_Center: {x: -0.000000040978193, y: -0.000000022351742, z: 0.006685746}
+--- !u!114 &8296888089422810194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012222111724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f988cbe658941144898ba81a05b9388c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SwitchM: 1
+  SwitchInterct: {fileID: 1000012222111724}
+  ClickPosition: 0
+  turning: 0
+  OffTime: 4
+--- !u!114 &7097902797073597954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012222111724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb5465a0b88d6e48960cbc4763325e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskObj: {fileID: 1000012222111724}
+  highlightMat: {fileID: 2100000, guid: 5dcecd44e0b043f48a644626572b756a, type: 2}
+  finished: 0
 --- !u!1 &1000012602271240
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,10 +215,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000012238783316}
-  - component: {fileID: 114000013764961168}
   m_Layer: 0
   m_Name: BtonSwitch02
-  m_TagString: Untagged
+  m_TagString: Switch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -196,28 +229,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000012831481218}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4000012655549050}
   - {fileID: 4000013827983176}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114000013764961168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000012831481218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f988cbe658941144898ba81a05b9388c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SwitchM: 2
-  SwitchInterct: {fileID: 1000012222111724}
-  ClickPosition: 0
-  OffTime: 4
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
