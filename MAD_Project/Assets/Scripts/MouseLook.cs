@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
-    Camera cam;
+    
     public float mouseSensitivity = 100f;
     public Transform playerBody;
 
     public float xRotation = 0f;
 
     float angRot;
+    public float angMult = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,12 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        angMult = Mathf.Clamp(angMult,0,15f);
+        angMult *= 0.999f;
+        if(angMult < 0.2){
+            angRot = 0;
+        }
+
         if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.LeftControl))
         {
             return;
@@ -35,7 +42,7 @@ public class MouseLook : MonoBehaviour
 
         angRot %= (2 * Mathf.PI);
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, Mathf.Sin(angRot)); // Mathf.Sin(angRot)
+        transform.localRotation = Quaternion.Euler(xRotation, 0f, angMult * Mathf.Sin(angRot)); // Mathf.Sin(angRot)
         playerBody.Rotate(Vector3.up * mouseX);
     }
 }
