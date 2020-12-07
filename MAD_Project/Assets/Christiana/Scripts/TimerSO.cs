@@ -13,11 +13,11 @@ public class TimerSO : ScriptableObject
 
     public void resetTimer()
     {
-        if (reset)
-        {
+        //if (reset)
+        //{
             value = resetValue;
             reset = false;
-        }
+        //}
     }
 
     public void updateTimer(float timeToRemove)
