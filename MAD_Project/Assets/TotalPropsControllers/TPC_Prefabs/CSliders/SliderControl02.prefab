@@ -88,7 +88,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000010034440452}
-  - component: {fileID: 114000014178004672}
   m_Layer: 0
   m_Name: SliderControl02
   m_TagString: Untagged
@@ -103,34 +102,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000013233937802}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5000001, z: 1.5000001}
   m_Children:
   - {fileID: 4000013165349946}
   - {fileID: 4000012814315634}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114000014178004672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000013233937802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56ea413111a51f247939bcb6a320a856, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SliderM: 2
-  dispD: 0.04
-  SliderControl: {fileID: 1000010490312136}
-  MovSpeed: 0.05
-  MDirection: 1
-  Movingtime: 2
-  Offtime: 4
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1000013969693988
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,9 +122,13 @@ GameObject:
   - component: {fileID: 4000013165349946}
   - component: {fileID: 33000012391213602}
   - component: {fileID: 23000013241910532}
+  - component: {fileID: 3215413138031228595}
+  - component: {fileID: 5186123893212871277}
+  - component: {fileID: 7008303504794510714}
+  - component: {fileID: 3884296822458394387}
   m_Layer: 0
   m_Name: SlderBody02_low
-  m_TagString: Untagged
+  m_TagString: Slider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -210,3 +194,71 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3215413138031228595
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013969693988}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.015616462, y: 0.09746831, z: 0.0008880884}
+  m_Center: {x: -0.000000037252903, y: -0.0000000030268001, z: 0.00044404416}
+--- !u!114 &5186123893212871277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013969693988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56ea413111a51f247939bcb6a320a856, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SliderM: 1
+  dispD: 0.04
+  SliderControl: {fileID: 1000010490312136}
+  MovSpeed: 0.05
+  MDirection: 1
+  Movingtime: 2
+  Offtime: 0
+  turning: 0
+--- !u!114 &7008303504794510714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013969693988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56ea413111a51f247939bcb6a320a856, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SliderM: 1
+  dispD: 0.04
+  SliderControl: {fileID: 1000010490312136}
+  MovSpeed: 0.05
+  MDirection: 1
+  Movingtime: 2
+  Offtime: 0
+  turning: 0
+--- !u!114 &3884296822458394387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013969693988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb5465a0b88d6e48960cbc4763325e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskObj: {fileID: 1000013969693988}
+  highlightMat: {fileID: 2100000, guid: 5dcecd44e0b043f48a644626572b756a, type: 2}
+  finished: 0

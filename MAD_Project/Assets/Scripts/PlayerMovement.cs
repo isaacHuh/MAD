@@ -31,9 +31,15 @@ public class PlayerMovement : MonoBehaviour
             if(Input.GetMouseButtonDown(0)){
                 if(hit.transform.tag == "Radial"){
                     hit.transform.GetComponent<TPC_RadialBC>().turning = true;
+                    hit.transform.GetComponent<TaskObject>().finished = true;
                 }
                 if(hit.transform.tag == "Switch"){
                     hit.transform.GetComponent<TPC_SwitchBton>().turning = true;
+                    hit.transform.GetComponent<TaskObject>().finished = true;
+                }
+                if(hit.transform.tag == "Slider"){
+                    hit.transform.GetComponent<TPC_SliderC>().turning = true;
+                    hit.transform.GetComponent<TaskObject>().finished = true;
                 }
             }
         

@@ -19,8 +19,9 @@ public class TPC_SliderC : MonoBehaviour
     public bool MDirection = false;
     public float Movingtime=2;
     private float CurrenTime=0;
-    public float Offtime = 4;
+    public float Offtime = 0;
     private float CurrenOfftime = 0;
+    public bool turning = false;
 
     // Use this for initialization
     void Start()
@@ -34,7 +35,9 @@ public class TPC_SliderC : MonoBehaviour
         switch (SliderM)
         {
             case SliderC_Mode.manual:
-                Debug.Log("doingManual");
+                if(turning){
+                    DoManualMode();
+                }
                 break;
             case SliderC_Mode.automatic:
                 DoAutomaticMode();
@@ -47,6 +50,53 @@ public class TPC_SliderC : MonoBehaviour
                 //DoNothing
                 break;
         }
+    }
+
+    void DoManualMode()
+    {
+        // 0.040f
+        CurrenTime += Time.deltaTime;
+
+        if (IsMoving && CurrenTime < Movingtime)
+        {
+            if (MDirection)
+            {               
+                    SliderControl.transform.Translate(0, Time.deltaTime * -MovSpeed, 0);
+
+                    if (SliderControl.transform.localPosition.z >= InitialPos.z + dispD)
+                    {
+                        MDirection = GenRandDirection();
+                        //IsMoving = false;
+                    }                                   
+            }
+            else
+            {
+                SliderControl.transform.Translate(0, Time.deltaTime * +MovSpeed, 0);
+
+                if (SliderControl.transform.localPosition.z <= InitialPos.z - dispD)
+                {
+                    MDirection = GenRandDirection();
+                    //IsMoving = false;
+                }
+            }
+        }
+        else
+        {
+            CurrenOfftime += Time.deltaTime;
+
+            if(CurrenOfftime >= Offtime)
+            {
+                CurrenTime = 0;
+                CurrenOfftime = 0;
+                turning = false;
+                //MDirection = GenRandDirection();
+                Movingtime = 2;
+                //Movingtime = Random.Range(0.5f, Movingtime);
+            }
+            
+        }
+
+
     }
 
     void DoAutomaticMode()
