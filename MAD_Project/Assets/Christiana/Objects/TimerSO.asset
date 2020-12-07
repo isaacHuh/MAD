@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820125a4a533d2044863a17427f7935a, type: 3}
   m_Name: TimerSO
   m_EditorClassIdentifier: 
-  value: 44.374775
+  value: 11.7039385
   reset: 0
-  resetValue: 120
+  resetValue: 30

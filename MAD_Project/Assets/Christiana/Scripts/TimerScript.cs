@@ -54,6 +54,7 @@ public class TimerScript : MonoBehaviour
         //but if they finish in the time limit, reload
         //Load new Scene
         //SceneManager.LoadScene(0);
+        LevelManager.level = 1;
         UnityEngine.SceneManagement.SceneManager.LoadScene("DeathScreen");
     }
 }

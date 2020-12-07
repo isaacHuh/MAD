@@ -18,6 +18,8 @@ public class GameOverScript : MonoBehaviour
     public void GameOver()
     {
         //Scene change on death (timer <= 0)
+        LevelManager.level = 1;
+        Cursor.lockState = CursorLockMode.None;
         UnityEngine.SceneManagement.SceneManager.LoadScene("DeathScreen");
         Debug.Log("GAME OVER");
     }

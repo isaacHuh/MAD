@@ -7,7 +7,7 @@ public class SceneChange : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+         Cursor.lockState = CursorLockMode.None;
     }
 
     // Update is called once per frame
@@ -18,11 +18,13 @@ public class SceneChange : MonoBehaviour
 
     public void StartClick()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene 1");
+        Cursor.lockState = CursorLockMode.None;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("IsaacScene");
     }
 
     public void MenuClick()
     {
+        Cursor.lockState = CursorLockMode.None;
         UnityEngine.SceneManagement.SceneManager.LoadScene("TitleScreen");
     }
 
